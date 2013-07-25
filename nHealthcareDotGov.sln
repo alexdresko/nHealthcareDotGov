@@ -5,6 +5,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nHealthcareDotGov", "nHealt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nHealthcareDotGov.Tests", "nHealthcareDotGov.Tests\nHealthcareDotGov.Tests.csproj", "{9AECF9A7-260C-474A-9154-CD2A39D3878B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1A30D726-5C1F-443D-BCE8-C9531460CC73}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		WE-Markdown.css = WE-Markdown.css
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
