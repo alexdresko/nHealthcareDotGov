@@ -7,6 +7,29 @@
 	using Newtonsoft.Json;
 	using Newtonsoft.Json.Converters;
 
+	public class BoolStringConverter : CustomCreationConverter<List<string>>
+	{
+		#region Public Methods and Operators
+
+		public override List<string> Create(Type objectType)
+		{
+			return new List<string>();
+		}
+
+		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+		{
+			var result = new List<string>();
+			if (reader.TokenType == JsonToken.StartArray)
+			{
+				result = serializer.Deserialize<List<string>>(reader);
+			}
+
+			return result;
+		}
+
+		#endregion
+	}
+
 	public class FeaturedConverter : CustomCreationConverter<bool>
 	{
 		#region Public Methods and Operators

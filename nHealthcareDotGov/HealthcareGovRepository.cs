@@ -16,18 +16,16 @@
 			{
 				var data = await client.GetStringAsync("https://www.healthcare.gov/api/articles.json");
 				data = data.Substring(0, data.Length - "},false]}".Length - 1) + "}]}";
-				var converted = JsonConvert.DeserializeObject<ArticlesContainer>(data);
+				var converted = GetArticlesFromString(data);
 				return converted.Articles;
 			}
 
-			//using (var client = new WebClient())
-			//{
-			//	client.Encoding = Encoding.UTF8;
-			//	var data = await client.DownloadStringTaskAsync("https://www.healthcare.gov/api/articles.json");
-			//	data = data.Substring(0, data.Length - "},false]}".Length - 1) + "}]}";
-			//	var converted = JsonConvert.DeserializeObject<ArticlesContainer>(data);
-			//	return converted.Articles;
-			//}
+		}
+
+		public static ArticlesContainer GetArticlesFromString(string data)
+		{
+			var converted = JsonConvert.DeserializeObject<ArticlesContainer>(data);
+			return converted;
 		}
 
 		#endregion

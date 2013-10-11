@@ -1,5 +1,6 @@
 ﻿namespace nHealthcareDotGov.Tests
 {
+	using System.IO;
 	using System.Linq;
 
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -19,6 +20,16 @@
 			Assert.IsFalse(articles.Result.Any(p => p.Content.Contains("???")), "Has ???");
 			Assert.IsFalse(articles.Result.Any(p => p.Content.Contains("â")), "has â");
 			Assert.IsTrue(articles.Result.Any(), "Did not return any articles");
+
+
+
+		}
+
+		[TestMethod]
+		public void TestBoolInString()
+		{
+			var data = File.ReadAllText(@"c:\temp\articles.json");
+			HealthcareGovRepository.GetArticlesFromString(data);
 		}
 
 		#endregion

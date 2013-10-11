@@ -6,6 +6,8 @@
 	using Newtonsoft.Json;
 	using Newtonsoft.Json.Converters;
 
+	
+
 	public class InsuranceStatusConverter : CustomCreationConverter<InsuranceStatus>
 	{
 		#region Public Methods and Operators

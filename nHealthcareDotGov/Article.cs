@@ -88,6 +88,7 @@
 		public string[] Questions { get; set; }
 
 		[JsonProperty("related")]
+		[JsonConverter(typeof(BoolStringConverter))]
 		public List<string> Related { get; set; }
 
 		[JsonProperty("segment")]
