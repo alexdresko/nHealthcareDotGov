@@ -20,7 +20,8 @@
 			Assert.IsFalse(articles.Result.Any(p => p.Content.Contains("???")), "Has ???");
 			Assert.IsFalse(articles.Result.Any(p => p.Content.Contains("â")), "has â");
 			Assert.IsTrue(articles.Result.Any(), "Did not return any articles");
-
+			Assert.IsTrue(!articles.Result.Any(p => p.Content.Contains("href=\"/")));
+			Assert.IsTrue(!articles.Result.Any(p => p.Excerpt.Contains("href=\"/")));
 
 
 		}
