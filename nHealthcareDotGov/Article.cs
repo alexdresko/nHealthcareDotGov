@@ -79,6 +79,7 @@
 		public string ProcessStep { get; set; }
 
 		[JsonProperty("published")]
+		[JsonConverter(typeof(FeaturedConverter))]
 		public bool? Published { get; set; }
 
 		[JsonProperty("question-header")]

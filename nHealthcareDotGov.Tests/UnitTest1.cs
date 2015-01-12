@@ -26,12 +26,6 @@
 
 		}
 
-		[TestMethod]
-		public void TestBoolInString()
-		{
-			var data = File.ReadAllText(@"c:\temp\articles.json");
-			HealthcareGovRepository.GetArticlesFromString(data);
-		}
 
 		#endregion
 	}

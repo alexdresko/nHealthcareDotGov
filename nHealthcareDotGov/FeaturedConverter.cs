@@ -48,7 +48,14 @@
 			}
 			else
 			{
-				result = serializer.Deserialize<bool>(reader);
+				if (reader.Value != null && reader.Value.ToString() == "up")
+				{
+					result = false;
+				}
+				else
+				{
+					result = serializer.Deserialize<bool>(reader);
+				}
 			}
 
 			return result;
